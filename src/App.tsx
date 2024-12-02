@@ -8,6 +8,7 @@ function App() {
       const baseURL = "playfit-indivisualiv://";
       const queryParams = new URLSearchParams({
         token: "12345",
+        state: "wibtae",
       });
 
       // Redirect to custom URL scheme with query params
