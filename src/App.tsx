@@ -6,13 +6,10 @@ function App() {
   useEffect(() => {
     const redirectToApp = () => {
       const baseURL = "playfit-indivisualiv://";
-      const queryParams = new URLSearchParams({
-        token: "12345",
-        state: "wibtae",
-      });
+      const currentQueryParams = new URLSearchParams(window.location.search);
 
       // Redirect to custom URL scheme with query params
-      window.location.href = `${baseURL}?${queryParams.toString()}`;
+      window.location.href = `${baseURL}?${currentQueryParams.toString()}`;
     };
 
     redirectToApp();
