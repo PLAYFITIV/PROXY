@@ -8,9 +8,8 @@ export const useGetAppLink = (
   data: string | undefined;
   error: Error | undefined;
   isLoading: boolean;
-} => {
-  return usePlayfitGet(
+} =>
+  usePlayfitGet(
     os ? SWR_KEYS.PLATFORM_GET_APP_LINK : undefined,
     os ? { os: os } : {}
   );
-};

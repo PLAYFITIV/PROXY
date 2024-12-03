@@ -7,6 +7,7 @@ export const playfitApi = axios.create({
   timeout: 30000, // 30 seconds timeout
   headers: {
     "Content-Type": "application/json",
+    "ngrok-skip-browser-warning": "true", // TODO: Dynamic
     Accept: "application/json",
   },
 });

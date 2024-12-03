@@ -49,14 +49,13 @@ function App() {
 
     if (error) {
       setIsError(true);
+      return;
     }
 
     if (data && queryString) {
       window.location.href = `${data}?${queryString}`;
+      return;
     }
-
-    // Should not happen
-    setIsError(true);
   }, [data, error, isLoading]);
 
   return (
