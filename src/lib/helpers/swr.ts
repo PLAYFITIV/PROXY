@@ -5,12 +5,16 @@ import { playfitFetcher } from "@/lib/helpers/axios";
 import { SWR_KEYS } from "@/constants/models/swr";
 
 export function appendQueryParams(
-  key: SWR_KEYS,
+  key: SWR_KEYS | undefined,
   queryParams: Record<
     string,
     string | number | boolean | Array<string | number | boolean>
   >
-): string {
+): string | undefined {
+  if (!key) {
+    return undefined;
+  }
+
   const params = new URLSearchParams();
 
   for (const paramKey in queryParams) {
@@ -42,8 +46,12 @@ export function usePlayfitGet<
     string | number | boolean | Array<string | number | boolean>
   >,
   ResponseData,
->(key: SWR_KEYS, queryParams?: RequestQueries, options: SWRConfiguration = {}) {
-  const keyWithQueries: string = queryParams
+>(
+  key: SWR_KEYS | undefined,
+  queryParams?: RequestQueries,
+  options: SWRConfiguration = {}
+) {
+  const keyWithQueries: string | undefined = queryParams
     ? appendQueryParams(key, queryParams)
     : key;
 

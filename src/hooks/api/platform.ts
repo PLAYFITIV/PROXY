@@ -9,9 +9,8 @@ export const useGetAppLink = (
   error: Error | undefined;
   isLoading: boolean;
 } => {
-  if (!os) {
-    return { data: undefined, error: undefined, isLoading: false };
-  }
-
-  return usePlayfitGet(SWR_KEYS.PLATFORM_GET_APP_LINK, { os: os });
+  return usePlayfitGet(
+    os ? SWR_KEYS.PLATFORM_GET_APP_LINK : undefined,
+    os ? { os: os } : {}
+  );
 };

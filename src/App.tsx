@@ -57,7 +57,7 @@ function App() {
 
     // Should not happen
     setIsError(true);
-  }, [data, error, isLoading, queryString]);
+  }, [data, error, isLoading]);
 
   return (
     <div className="flex flex-col justify-center items-center h-screen bg-black">
