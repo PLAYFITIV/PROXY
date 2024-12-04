@@ -41,10 +41,12 @@ export function appendQueryParams(
  * @returns SWR response
  */
 export function usePlayfitGet<
-  RequestQueries extends Record<
-    string,
-    string | number | boolean | Array<string | number | boolean>
-  >,
+  RequestQueries extends
+    | Record<
+        string,
+        string | number | boolean | Array<string | number | boolean>
+      >
+    | undefined,
   ResponseData,
 >(
   key: SWR_KEYS | undefined,
