@@ -11,8 +11,6 @@ function App() {
   const [playfitOs, setPlayfitOs] = useState<string | undefined>(undefined);
   const [queryString, setQueryString] = useState<string | undefined>(undefined);
 
-  const { data, error, isLoading } = useGetAppLink(playfitOs);
-
   useEffect(() => {
     // Parse all query params
     const currentQueryParams = new URLSearchParams(window.location.search);
@@ -41,6 +39,8 @@ function App() {
       return;
     }
   }, []);
+
+  const { data, error, isLoading } = useGetAppLink(playfitOs);
 
   useEffect(() => {
     if (isLoading) {

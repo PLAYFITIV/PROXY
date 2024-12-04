@@ -10,6 +10,6 @@ export const useGetAppLink = (
   isLoading: boolean;
 } =>
   usePlayfitGet(
-    os ? SWR_KEYS.PLATFORM_GET_APP_LINK : undefined,
+    os ? SWR_KEYS.PLATFORM_APP_LINK : undefined,
     os ? { os: os } : {}
   );
